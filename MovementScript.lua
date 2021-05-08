@@ -4,7 +4,6 @@ local Info = Ui:CreateSection("Info")
 local WalkSpeedTab = Ui:CreateSection("WalkSpeed")
 local JumpPowerTab = Ui:CreateSection("JumpPower")
 local uis = game:GetService("UserInputService")
-local NoclipTab = Ui:CreateSection("Noclip")
 
 
 Info:CreateLabel("Made by irlydontksdnow#4885")
@@ -79,12 +78,12 @@ if noclip then
 game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
 end
 end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
  
-NoclipTab:CreateButton("NoClip button", function(nc) end)
-
-local function nc()
-	noclip = not noclip
-	game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+if key == "z" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
 end
-
-NoclipTab:CreateToggle("NoClip Boi", "idk", function(nc) end)
+end)
