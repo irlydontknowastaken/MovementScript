@@ -32,7 +32,7 @@ local myHRP = myChar:WaitForChild("HumanoidRootPart")
 local camera = game.Workspace.CurrentCamera
 
 local flying = false
-local speed = 3
+local speed = 0.5
 
 local bp = Instance.new("BodyPosition", myHRP)
 bp.MaxForce = Vector3.new()
