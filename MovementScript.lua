@@ -86,3 +86,5 @@ local function nc()
 	noclip = not noclip
 	game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
 end
+
+NoclipTab:CreateToggle("NoClip Boi", "idk", function(nc) end)
