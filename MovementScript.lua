@@ -23,6 +23,7 @@ JumpPowerTab:CreateSlider("bruh jumpy boi", "Jump", 1, 300, false, function(jp)
    game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp
 end)
 
+--Fly
 local rs = game:GetService("RunService")
 
 local myPlayer = game.Players.LocalPlayer
@@ -31,8 +32,7 @@ local myHRP = myChar:WaitForChild("HumanoidRootPart")
 local camera = game.Workspace.CurrentCamera
 
 local flying = false
-local speed = 0.5
-
+local speed = 3
 
 local bp = Instance.new("BodyPosition", myHRP)
 bp.MaxForce = Vector3.new()
@@ -68,4 +68,22 @@ uis.InputBegan:connect(function(input)
 			endFlying()
 		end
 	end
+end)
+
+
+--noclip
+noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+ 
+if key == "z" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
 end)
