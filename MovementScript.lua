@@ -9,6 +9,7 @@ local uis = game:GetService("UserInputService")
 Info:CreateLabel("Made by irlydontksdnow#4885")
 Info:CreateLabel("Basic Movement GUI")
 Info:CreateLabel("Change Tabs On The left")
+Info:CreateLabel("Ver 1.3")
 Info:CreateLabel("Press F to fly")
 
 WalkSpeedTab:CreateLabel("WalkSpeed")
