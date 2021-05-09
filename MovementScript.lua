@@ -100,8 +100,8 @@ mouse.Button1Down:Connect(function()
         char:MoveTo(mouse.Hit.p)
     end
 end)
-ClickTpTab:CreateDropdown("ClickTp", "Clicko", "ClickFlag", {"On", "Off"}, function(chosenOption)
- if chosenOption == "On" then
+ClickTpTab:CreateDropdown("ClickTp", "Clicko", "ClickFlag", {"On", "Off"}, function(chosenOption))
+if chosenOption == "On" then
         shifthold = true
 else if == "Off" then
 	shifthold = false
