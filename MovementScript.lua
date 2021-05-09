@@ -4,6 +4,10 @@ local Info = Ui:CreateSection("Info")
 local WalkSpeedTab = Ui:CreateSection("WalkSpeed")
 local JumpPowerTab = Ui:CreateSection("JumpPower")
 local uis = game:GetService("UserInputService")
+local player = game:GetService("Players").LocalPlayer
+local char = player.Character
+local mouse = player:GetMouse()
+local ClickTpTab = Ui:CreateSection("ClickTp")
 
 
 Info:CreateLabel("Made by irlydontksdnow#4885")
@@ -87,3 +91,17 @@ noclip = not noclip
 game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
 end
 end)
+--Click TP
+
+local shifthold  = false
+
+mouse.Button1Down:Connect(function()
+    if shifthold then
+        char:MoveTo(mouse.Hit.p)
+    end
+end)
+ClickTpTab:CreateDropdown("ClickTp", "Clicko", "ClickFlag", {"On", "Off"}, function(chosenOption)
+ if chosenOption == "On" then
+        shifthold = true
+else if == "Off" then
+	shifthold = false
